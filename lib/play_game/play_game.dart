@@ -59,6 +59,7 @@ class _PlayGameState extends State<PlayGame> {
                       if (value.isEmpty) return "Enter amount for bet";
                       if (int.parse((value)) == 0)
                         return "Enter amount for bet";
+                      return null;
                     },
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(

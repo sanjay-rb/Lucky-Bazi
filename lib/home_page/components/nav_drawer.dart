@@ -48,7 +48,7 @@ class NavDrawer extends StatelessWidget {
               },
             ),
           ListTile(
-            title: Text("Histroy"),
+            title: Text("History"),
             leading: Icon(
               Icons.history,
               color: Colors.black,
