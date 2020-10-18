@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1006335005231",
+    "firebase_url": "https://bettingapp-d58ef.firebaseio.com",
+    "project_id": "bettingapp-d58ef",
+    "storage_bucket": "bettingapp-d58ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006335005231:android:baf2712a0859c71a626cda",
+        "android_client_info": {
+          "package_name": "com.sanjoke.betting_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006335005231-qv39vo0b808nie9jefcjrji4crdnliin.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sanjoke.betting_app",
+            "certificate_hash": "1126787af74a5c7645b64791da0ac8b4494eb1a8"
+          }
+        },
+        {
+          "client_id": "1006335005231-ie227oil922b6kvtoi13vmsqmoel2qhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4L2VNOrp3d4JFt_nptMJ3UTW06MrM3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006335005231-ie227oil922b6kvtoi13vmsqmoel2qhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
