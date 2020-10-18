@@ -169,6 +169,16 @@ class _PlayGameState extends State<PlayGame> {
           });
         } else {
           currentBaziDoc.collection('result').doc(roundTaken).set({
+            '0': 0,
+            '1': 0,
+            '2': 0,
+            '3': 0,
+            '4': 0,
+            '5': 0,
+            "6": 0,
+            '7': 0,
+            '8': 0,
+            '9': 0,
             numberTaken1: 1,
             numberTaken2: 1,
           }).then((value) {

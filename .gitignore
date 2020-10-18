@@ -43,6 +43,7 @@
 /build/app/outputs/flutter-apk/app-x86_64-release.apk
 /build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
 /build/app/outputs/flutter-apk/app.apk.sha1
+/build/app/outputs/flutter-apk/app-debug.apk
 
 # Web related
 lib/generated_plugin_registrant.dart

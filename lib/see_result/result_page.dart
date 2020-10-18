@@ -49,7 +49,67 @@ class _ResultPageState extends State<ResultPage> {
             DocumentSnapshot doc = snapshot.data;
             if (doc.data() == null) {
               return Center(
-                child: Text("Players not played yet!"),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration:
+                            InputDecoration(labelText: 'Enter Number 1'),
+                        onChanged: (value) {
+                          resultNumber1 = value;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration:
+                            InputDecoration(labelText: 'Enter Number 2'),
+                        onChanged: (value) {
+                          resultNumber2 = value;
+                        },
+                      ),
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        FocusScope.of(context).unfocus();
+                        if (resultNumber1 != '***' && resultNumber2 != '***') {
+                          showDialog(
+                            context: context,
+                            child: AlertDialog(
+                              title: Text("Confirm Result"),
+                              content: Text(
+                                  "Number 1 = $resultNumber1\nNumber 2 = $resultNumber2"),
+                              actions: [
+                                FlatButton(
+                                  onPressed: () {
+                                    Navigator.pop(context, true);
+                                  },
+                                  child: Text("Confirm"),
+                                ),
+                              ],
+                            ),
+                          ).then((isConfirm) {
+                            if (isConfirm != null) {
+                              currentBaziDoc.update({
+                                widget.round: {
+                                  'number1': resultNumber1,
+                                  'number2': resultNumber2,
+                                }
+                              }).then((value) {
+                                Navigator.pop(context);
+                              });
+                            }
+                          });
+                        }
+                      },
+                      child: Text("Publish"),
+                    )
+                  ],
+                ),
               );
             } else {
               Map dataMap = doc.data();
@@ -68,9 +128,28 @@ class _ResultPageState extends State<ResultPage> {
               List finalNumber2Key = finalKey
                   .where((element) => element.toString().length != 1)
                   .toList();
-
               return Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(labelText: 'Enter Number 1'),
+                      onChanged: (value) {
+                        resultNumber1 = value;
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(labelText: 'Enter Number 2'),
+                      onChanged: (value) {
+                        resultNumber2 = value;
+                      },
+                    ),
+                  ),
                   Expanded(
                     child: ListView.separated(
                       itemCount: 2,
@@ -163,41 +242,42 @@ class _ResultPageState extends State<ResultPage> {
                       child: RaisedButton(
                         color: Colors.amber,
                         child: Text(
-                          "Publish $resultNumber1 & $resultNumber2 as result",
+                          "Publish",
+                          // "Publish $resultNumber1 & $resultNumber2 as result",
                           style: TextStyle(fontSize: 20),
                         ),
-                        onPressed:
-                            resultNumber1 != '***' && resultNumber2 != '***'
-                                ? () {
-                                    showDialog(
-                                      context: context,
-                                      child: AlertDialog(
-                                        title: Text("Confirm Result"),
-                                        content: Text(
-                                            "Number 1 = $resultNumber1\nNumber 2 = $resultNumber2"),
-                                        actions: [
-                                          FlatButton(
-                                            onPressed: () {
-                                              Navigator.pop(context, true);
-                                            },
-                                            child: Text("Confirm"),
-                                          ),
-                                        ],
-                                      ),
-                                    ).then((isConfirm) {
-                                      if (isConfirm != null) {
-                                        currentBaziDoc.update({
-                                          widget.round: {
-                                            'number1': resultNumber1,
-                                            'number2': resultNumber2,
-                                          }
-                                        }).then((value) {
-                                          Navigator.pop(context);
-                                        });
-                                      }
-                                    });
+                        onPressed: () {
+                          if (resultNumber1 != "***" &&
+                              resultNumber1 != '***') {
+                            showDialog(
+                              context: context,
+                              child: AlertDialog(
+                                title: Text("Confirm Result"),
+                                content: Text(
+                                    "Number 1 = $resultNumber1\nNumber 2 = $resultNumber2"),
+                                actions: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      Navigator.pop(context, true);
+                                    },
+                                    child: Text("Confirm"),
+                                  ),
+                                ],
+                              ),
+                            ).then((isConfirm) {
+                              if (isConfirm != null) {
+                                currentBaziDoc.update({
+                                  widget.round: {
+                                    'number1': resultNumber1,
+                                    'number2': resultNumber2,
                                   }
-                                : null,
+                                }).then((value) {
+                                  Navigator.pop(context);
+                                });
+                              }
+                            });
+                          }
+                        },
                       ),
                     ),
                   ),
