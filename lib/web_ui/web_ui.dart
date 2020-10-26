@@ -18,16 +18,18 @@ class WebUi extends StatelessWidget {
             Expanded(child: HomeBody()),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
-                width: double.infinity,
-                child: RaisedButton(
-                  color: Colors.amber,
-                  child: Text("Download App Now!"),
-                  onPressed: () {
-                    String urlString = 'https://bit.ly/luckybazi';
-                    canLaunch(urlString).then((value) => launch(urlString));
-                  },
+              child: Builder(
+                builder: (context) => SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.amber,
+                    child: Text("Download App Now!"),
+                    onPressed: () {
+                      String urlString = 'https://bit.ly/luckybazi';
+                      canLaunch(urlString).then((value) => launch(urlString));
+                    },
+                  ),
                 ),
               ),
             ),
