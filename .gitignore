@@ -53,3 +53,7 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+
+# My Changes
+functions/

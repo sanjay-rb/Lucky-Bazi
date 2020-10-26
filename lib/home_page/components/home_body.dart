@@ -20,18 +20,18 @@ class HomeBody extends StatelessWidget {
           DocumentSnapshot doc = snapshot.data;
           if (!doc.exists) {
             currentBaziDoc.set({
-              '10:15': {'number1': '***', 'number2': '***'},
-              '11:15': {'number1': '***', 'number2': '***'},
-              '12:15': {'number1': '***', 'number2': '***'},
-              '13:15': {'number1': '***', 'number2': '***'},
-              '14:15': {'number1': '***', 'number2': '***'},
-              '15:15': {'number1': '***', 'number2': '***'},
-              '16:15': {'number1': '***', 'number2': '***'},
-              '17:15': {'number1': '***', 'number2': '***'},
-              '18:15': {'number1': '***', 'number2': '***'},
-              '19:15': {'number1': '***', 'number2': '***'},
-              '20:15': {'number1': '***', 'number2': '***'},
-              '21:15': {'number1': '***', 'number2': '***'},
+              '10:15': {'number1': '*', 'number2': '***'},
+              '11:15': {'number1': '*', 'number2': '***'},
+              '12:15': {'number1': '*', 'number2': '***'},
+              '13:15': {'number1': '*', 'number2': '***'},
+              '14:15': {'number1': '*', 'number2': '***'},
+              '15:15': {'number1': '*', 'number2': '***'},
+              '16:15': {'number1': '*', 'number2': '***'},
+              '17:15': {'number1': '*', 'number2': '***'},
+              '18:15': {'number1': '*', 'number2': '***'},
+              '19:15': {'number1': '*', 'number2': '***'},
+              '20:15': {'number1': '*', 'number2': '***'},
+              '21:15': {'number1': '*', 'number2': '***'},
             });
             return Center(
               child: CircularProgressIndicator(),
