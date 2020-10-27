@@ -21,6 +21,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "site": "luckybazi",
     "public": "build/web",
     "ignore": [
       "firebase.json",
